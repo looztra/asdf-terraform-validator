@@ -29,6 +29,9 @@ install_tool() {
   echo "Cleaning previous binaries"
   rm -f "$binary_path" 2>/dev/null || true
 
+  echo "Extracting archive"
+  tar xpf "$download_path" -C "$tmp_download_dir"
+
   echo "Copying binary"
   cp "$(get_binary_path_in_archive "${tmp_download_dir}" "${binary_name}" "${version}" "${platform}")" "${binary_path}"
   chmod +x "${binary_path}"
@@ -52,7 +55,7 @@ get_filename() {
   local platform="$2"
   local binary_name="$3"
 
-  echo "${binary_name}_${platform}"
+  echo "${binary_name}_${platform}.tar.gz"
 }
 
 # https://github.com/thazelart/terraform-validator/releases/download/2.0.1/terraform-validator_Linux_x86_64.tar.gz
