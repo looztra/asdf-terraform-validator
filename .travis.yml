@@ -11,4 +11,4 @@ script:
   - asdf plugin-test $TOOL_NAME ./ "$TOOL_TEST_COMMAND" --asdf-tool-version $TOOL_VERSION
 os:
   - linux
-#  - osx
+  - osx
