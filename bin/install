@@ -44,7 +44,7 @@ get_binary_path_in_archive() {
 }
 
 get_platform() {
-  echo "$(uname | tr '[:upper:]' '[:lower:]')-amd64"
+  echo "$(uname)_x86_64"
 }
 
 get_filename() {
@@ -52,10 +52,10 @@ get_filename() {
   local platform="$2"
   local binary_name="$3"
 
-  echo "${binary_name}"
+  echo "${binary_name}_${platform}"
 }
 
-# https://github.com/thazelart/terraform-validator/releases/download/1.3.4/terraform-validator
+# https://github.com/thazelart/terraform-validator/releases/download/2.0.1/terraform-validator_Linux_x86_64.tar.gz
 
 get_download_url() {
   local version="$1"
