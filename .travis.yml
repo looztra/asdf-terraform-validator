@@ -1,6 +1,6 @@
 language: c
 env:
-  - TOOL_NAME=terraform-validator TOOL_VERSION=1.3.4 TOOL_TEST_COMMAND='terraform-validator --version'
+  - TOOL_NAME=terraform-validator TOOL_VERSION=2.0.1 TOOL_TEST_COMMAND='terraform-validator --version'
 before_script:
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
